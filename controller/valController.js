@@ -35,7 +35,7 @@ let valController = {
         }
 
         //question (e) if a field is of the wrong type
-        if(typeof rule !== 'object') {
+        if(typeof rule !== 'object' || Array.isArray(rule)) {
             return res.status(400).json({
                 "message": "rule should be an object.",
                 "status": "error",
