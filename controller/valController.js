@@ -35,14 +35,14 @@ let valController = {
         }
 
         //question (e) if a field is of the wrong type
-        if(typeof(rule) !== 'object') {
+        if(typeof rule !== 'object') {
             return res.status(400).json({
                 "message": "rule should be an object.",
                 "status": "error",
                 "data": null
             })
         }
-        if(typeof(data) !== 'object' && typeof(data) !== 'array' && typeof(data) !== 'string' && data === null) {
+        if(typeof data !== 'object' && Object.prototype.toString.call(data) !== "[object String]") {
             return res.status(400).json({
                 "message": "data should be an object or an array or a string.",
                 "status": "error",
