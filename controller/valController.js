@@ -42,7 +42,7 @@ let valController = {
                 "data": null
             })
         }
-        if(typeof(data) !== 'object' && typeof(data) !== 'array' && typeof(data) !== 'string' && data !== null) {
+        if(typeof(data) !== 'object' && typeof(data) !== 'array' && typeof(data) !== 'string' && data === null) {
             return res.status(400).json({
                 "message": "data should be an object or an array or a string.",
                 "status": "error",
