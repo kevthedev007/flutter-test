@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser')
 
 //create express app
 const app = express()
@@ -8,17 +7,6 @@ const app = express()
 const routes = require('./router/router.js');
 
 //middleware
-// app.use((req, res, next) => {
-//     if(req.headers['content-type'] !== 'application/json' && req.body !== "object") {
-//         return res.json({
-//             "message": "Invalid JSON payload passed.",
-//             "status": "error",
-//             "data": null
-//         })
-//     };
-//     next()
-// })
-
 app.use(express.json())
 
 //routing
