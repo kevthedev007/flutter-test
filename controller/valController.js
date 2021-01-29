@@ -50,7 +50,7 @@ let valController = {
             })
         }
 
-    //invalid json payload taken care of in app.js
+    //invalid json payload taken care of in router middleware
 
     //question g if the field specified in the rule object is missing from data passed
         let result = data.hasOwnProperty(rule.field);
