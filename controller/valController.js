@@ -50,12 +50,9 @@ let valController = {
             })
         }
 
-        //question f
+    //invalid json payload taken care of in app.js
 
-
-
-
-        //question g if the field specified in the rule object is missing from data passed
+    //question g if the field specified in the rule object is missing from data passed
         let result = data.hasOwnProperty(rule.field);
         if(!result) {
             return res.json({
@@ -92,8 +89,12 @@ let valController = {
                 break;
             case "contains" :
                 sign = function(a,b) {
+                    if(typeof b === 'number') {
                     return a.includes(b);
-                };
+                } else {
+                    return a.includes(b.toLowerCase())
+                }
+            }
                 break;
         }
 
